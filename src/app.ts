@@ -21,7 +21,7 @@ app.use(
   })
 );
 
-// application router
+// application routerJ
 // all route
 app.use("/api", router);
 
