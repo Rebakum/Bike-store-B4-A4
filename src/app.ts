@@ -13,10 +13,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://front end live link .vercel.app",
-    ],
+    origin: ["http://localhost:5173", "https://front end  .vercel.app"],
     credentials: true,
   })
 );
