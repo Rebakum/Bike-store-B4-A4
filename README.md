@@ -1,76 +1,157 @@
-# 🚴 Bike Store Management System
-live link: (https://bike-store-b4-a4.vercel.app/)
+# 🚴‍♂️ Bike Shop Application
 
-The **Bike Store Management System** is a full-stack web application designed to manage the inventory, orders, and revenue of a bike store. This project includes features like inventory tracking, order placement, and revenue calculation using Node.js, Express, MongoDB, and React.
-
----
-
-## 📋 Features
-
-### 1. Inventory Management
-- Track the stock availability of bikes.
-- Automatically update stock levels when an order is placed.
-- Mark bikes as out of stock when inventory reaches zero.
-
-### 2. Order Management
-- Place customer orders with details like quantity, total price, and customer email.
-- Prevent orders if the requested quantity exceeds available stock.
-- Retrieve all orders with timestamps for management.
-
-### 3. Revenue Calculation
-- Calculate total revenue based on all customer orders.
-- Dynamically fetch data from the database using aggregation pipelines.
+A full-stack bike e-commerce web application with user registration, secure authentication, product browsing, admin/user dashboards, order management, and SurjoPay payment integration.
 
 ---
 
-## 🛠️ Technologies Used
+## 🔥 Live Demo
 
-### Backend:
-- **Node.js**: Server-side runtime environment.
-- **Express.js**: Web framework for building RESTful APIs.
-- **MongoDB**: NoSQL database for data storage.
-- **Mongoose**: ODM library for MongoDB.
-
-### Frontend (Optional for full-stack projects):
-- **React.js**: For creating the user interface.
-- **Tailwind CSS**: For styling the application.
-
-### Other Tools:
-- **Postman**: For API testing.
-- **Git**: Version control.
-- **ESLint**: For code linting and formatting.
+[Coming Soon...] or [Add your deployed URL here]
 
 ---
+
+## 🧾 Table of Contents
+
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Folder Structure](#folder-structure)
+- [Environment Variables](#environment-variables)
+- [API Endpoints](#api-endpoints)
+- [Run Locally](#run-locally)
+- [Author](#author)
+
+---
+
+## 📌 Project Overview
+
+The **Bike Shop Application** is a full-featured e-commerce platform where users can browse, filter, and purchase bikes. It includes secure user authentication, role-based dashboards for users and admins, real-time order tracking, and payment integration using **SurjoPay**.
+
+---
+
+## 🎯 Features
+
+### 🔐 Authentication
+
+- Register/Login with JWT token-based authentication.
+- Passwords hashed with bcrypt.
+- Role-based access control: `customer` & `admin`.
+
+### 🌐 Public Routes
+
+- Home page with navbar, banner, featured products, extra section, and footer.
+- All products page with:
+  - Search (by brand, name, category)
+  - Filters (price, model, availability)
+  - Pagination
+- Product details page
+- About page
+
+### 🔒 Private Routes
+
+- **Checkout Page**:
+  - Order form, product/user details
+  - SurjoPay integration
+  - Stock validation
+
+- **Dashboard**:
+  - User Dashboard:
+    - View orders, update profile/password
+    - Order tracking
+  - Admin Dashboard:
+    - Manage products (CRUD)
+    - Manage orders (CRUD & status update)
+    - Manage users (deactivate accounts)
+
+### 🎨 UI/UX
+
+- Fully responsive for all devices
+- Toast notifications
+- Spinners during loading
+- Friendly error handling (e.g., login error, out-of-stock)
+
+### 🛠 Optional (Recommended)
+
+- Order tracking progress for customers
+- Admin can update status: Pending, Processing, Shipped, Delivered
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- React + Vite
+- TypeScript
+- Tailwind CSS
+- Axios + React Query
+- React Router DOM
+- AOS / Swiper.js / React Icons
+- Toastify
+
+### Backend
+
+- Node.js
+- Express.js
+- TypeScript
+- MongoDB + Mongoose
+- JWT for authentication
+- Bcrypt for hashing
+- dotenv, CORS, Helmet, morgan, zod
+- 
+---
+
+## 🗃️ Environment Variables
+
+### Backend (`/server/.env`)
+
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+SURJOPAY_API_KEY=your_surjopay_key
+
+---
+## 🗃️ API Endpoints Overview
+VITE_API_BASE_URL=http://localhost:5000/api
+--
+
 
 ## 🗃️ API Endpoints
 
 ### 1. **Place an Order**
 - **Endpoint**: `/api/orders`
 - **Method**: `POST`
-- **Request Body**:
+- ** Headers: Authorization: Bearer <JWT_TOKEN>
+--
+
+
+###Request Body:
   ```json
-  {
-    "email": "customer@example.com",
-    "product": "648a45e5f0123c45678d9012",
-    "quantity": 2,
-    "totalPrice": 2400
-  }
+ {
+  "email": "customer@example.com",
+  "product": "648a45e5f0123c45678d9012",
+  "quantity": 2,
+  "totalPrice": 2400
+}
   ```
 - **Response**:
   ```json
-  {
-    "message": "Order created successfully",
-    "status": true,
-    "data": {
-      "_id": "648b45f5e1234b56789a6789",
-      "email": "customer@example.com",
-      "product": "648a45e5f0123c45678d9012",
-      "quantity": 2,
-      "totalPrice": 2400,
-      "createdAt": "2024-11-19T12:00:00.000Z",
-      "updatedAt": "2024-11-19T12:00:00.000Z"
-    }
+ {
+  "message": "Order created successfully",
+  "status": true,
+  "data": {
+    "_id": "648b45f5e1234b56789a6789",
+    "email": "customer@example.com",
+    "product": "648a45e5f0123c45678d9012",
+    "quantity": 2,
+    "totalPrice": 2400,
+    "createdAt": "2024-11-19T12:00:00.000Z",
+    "updatedAt": "2024-11-19T12:00:00.000Z"
   }
+}
+
   ```
 
 ### 2. **Calculate Revenue**
@@ -92,9 +173,15 @@ The **Bike Store Management System** is a full-stack web application designed to
 ## 🌟 Getting Started
 
 ### Prerequisites:
-- Node.js
-- MongoDB
-- Postman (for testing APIs)
+-Node.js (v16 or later)
+
+-MongoDB (Local or Atlas)
+
+-Postman (for testing API endpoints)
+
+-SurjoPay API credentials (for payment integration)
+
+---
 
 ### Installation:
 1. Clone the repository:
