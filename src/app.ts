@@ -11,6 +11,7 @@ const app: Application = express();
 
 app.use(cookieParser());
 app.use(express.json());
+// cors origin
 app.use(
   cors({
     origin: [
