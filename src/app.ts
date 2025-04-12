@@ -13,7 +13,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://front end  .vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://bike-store-b4-a4-frontend.vercel.app",
+    ],
     credentials: true,
   })
 );
