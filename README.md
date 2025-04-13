@@ -95,7 +95,15 @@ The collection is organized into several folders for easier navigation:
 
 ## 📦 How to Use
 
-1. Clone or download this repository.
+## 📦 How to Use
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/Rebakum/Bike-store-B4-A4.git
+   cd Bike-store-B4-A4
+   ```
+
 2. Open **Postman**.
 3. Register a user, then login to get a JWT token.
 4. Add the token to the `Authorization` header for protected routes.
