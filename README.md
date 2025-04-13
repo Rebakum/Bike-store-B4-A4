@@ -1,6 +1,6 @@
 # 🚴‍♂️ Bike Shop Application
 
-A backend bike e-commerce web application with user registration, secure authentication, product browsing, admin/user dashboards, order management, and SurjoPay payment integration.
+A backend bike shop e-commerce web application with user registration, secure authentication, product browsing, admin/user dashboards, order management, and SurjoPay payment integration.
 
 ---
 
