@@ -1,6 +1,6 @@
 # 🚴‍♂️ Bike Shop Application
 
-A full-stack bike e-commerce web application with user registration, secure authentication, product browsing, admin/user dashboards, order management, and SurjoPay payment integration.
+A backend bike e-commerce web application with user registration, secure authentication, product browsing, admin/user dashboards, order management, and SurjoPay payment integration.
 
 ---
 
@@ -40,13 +40,22 @@ The **Bike Shop Application** is a full-featured e-commerce platform where users
 
 ### 🌐 Public Routes
 
-- Home page with navbar, banner, featured products, extra section, and footer.
-- All products page with:
+- products management with:
+  - Create a product
+  - Get All products
   - Search (by brand, name, category)
   - Filters (price, model, availability)
   - Pagination
-- Product details page
-- About page
+  - Product details
+  - update product
+  - delete product
+
+
+- order management with:
+  - create dynamic order fron products
+  - get all orders
+  - calculate total price for order
+
 
 ### 🔒 Private Routes
 
@@ -80,16 +89,6 @@ The **Bike Shop Application** is a full-featured e-commerce platform where users
 
 ## 🛠 Tech Stack
 
-### Frontend
-
-- React + Vite
-- TypeScript
-- Tailwind CSS
-- Axios + React Query
-- React Router DOM
-- AOS / Swiper.js / React Icons
-- Toastify
-
 ### Backend
 
 - Node.js
@@ -104,7 +103,7 @@ The **Bike Shop Application** is a full-featured e-commerce platform where users
 
 ## 🗃️ Environment Variables
 
-### Backend (`/server/.env`)
+### Backend (`.env`)
 
 ```env
 PORT=5000
@@ -186,8 +185,8 @@ VITE_API_BASE_URL=http://localhost:5000/api
 ### Installation:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/bike-store-management-system.git
-   cd bike-store-management-system
+   git clone https://github.com/Rebakum/Bike-store-B4-A4.git
+   cd Bike-store-B4-A4
    ```
 2. Install dependencies:
    ```bash
@@ -201,15 +200,8 @@ VITE_API_BASE_URL=http://localhost:5000/api
    ```
 4. Start the server:
    ```bash
-   npm start
+   npm run dev
    ```
-5. (Optional) If a frontend is included:
-   Navigate to the frontend directory and start the React app:
-   ```bash
-   cd client
-   npm start
-   ```
-
 ---
 
 ## 🤬 Testing
