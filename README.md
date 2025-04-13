@@ -73,18 +73,6 @@ The **Bike Shop Application** is a full-featured e-commerce platform where users
     - Manage orders (CRUD & status update)
     - Manage users (deactivate accounts)
 
-### 🎨 UI/UX
-
-- Fully responsive for all devices
-- Toast notifications
-- Spinners during loading
-- Friendly error handling (e.g., login error, out-of-stock)
-
-### 🛠 Optional (Recommended)
-
-- Order tracking progress for customers
-- Admin can update status: Pending, Processing, Shipped, Delivered
-
 ---
 
 ## 🛠 Tech Stack
@@ -167,6 +155,33 @@ VITE_API_BASE_URL=http://localhost:5000/api
   }
   ```
 
+---
+## 🚲 Bike Shop API Endpoints
+ ### 🔐 User Endpoints
+  # Method	Endpoint	Description
+   - GET	/api/users	Get all users
+   - GET	/api/users/:id	Get user by ID
+   - POST	/api/users	Create a new user
+   - PUT	/api/users/:id	Update user info
+   - DELETE	/api/users/:id	Delete a user
+---
+
+### 🛒 Product Endpoints
+ # Method	Endpoint	Description
+  - GET	/api/products	Get all products
+  - GET	/api/products/:id	Get product by ID
+  - POST	/api/products	Add new product
+  - PUT	/api/products/:id	Update product details
+  - DELETE	/api/products/:id	Delete a product
+---
+
+### 📦 Order Endpoints
+ # Method	Endpoint	Description
+  - GET	/api/orders	Get all orders
+  - GET	/api/orders/:id	Get order by ID
+  - POST	/api/orders	Create a new order
+  - PUT	/api/orders/:id	Update order status/info
+  - DELETE	/api/orders/:id	Cancel/Delete an order
 ---
 
 ## 🌟 Getting Started
