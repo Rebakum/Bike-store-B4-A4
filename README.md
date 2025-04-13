@@ -10,183 +10,14 @@ https://bike-store-b4-a4.vercel.app/
 
 ---
 
-## 🧾 Table of Contents
-
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Folder Structure](#folder-structure)
-- [Environment Variables](#environment-variables)
-- [API Endpoints](#api-endpoints)
-- [Run Locally](#run-locally)
-- [Author](#author)
-
----
-
 ## 📌 Project Overview
 
-The **Bike Shop Application** is a full-featured e-commerce platform where users can browse, filter, and purchase bikes. It includes secure user authentication, role-based dashboards for users and admins, real-time order tracking, and payment integration using **SurjoPay**.
-
----
-
-## 🎯 Features
-
-### 🔐 Authentication
-
-- Register/Login with JWT token-based authentication.
-- Passwords hashed with bcrypt.
-- Role-based access control: `customer` & `admin`.
-
-### 🌐 Public Routes
-
-- products management with:
-  - Create a product
-  - Get All products
-  - Search (by brand, name, category)
-  - Filters (price, model, availability)
-  - Pagination
-  - Product details
-  - update product
-  - delete product
-
-
-- order management with:
-  - create dynamic order fron products
-  - get all orders
-  - calculate total price for order
-
-
-### 🔒 Private Routes
-
-- **Checkout Page**:
-  - Order form, product/user details
-  - SurjoPay integration
-  - Stock validation
-
-- **Dashboard**:
-  - User Dashboard:
-    - View orders, update profile/password
-    - Order tracking
-  - Admin Dashboard:
-    - Manage products (CRUD)
-    - Manage orders (CRUD & status update)
-    - Manage users (deactivate accounts)
-
----
-
-## 🛠 Tech Stack
-
-### Backend
-
-- Node.js
-- Express.js
-- TypeScript
-- MongoDB + Mongoose
-- JWT for authentication
-- Bcrypt for hashing
-- dotenv, CORS, Helmet, morgan, zod
-- 
----
-
-## 🗃️ Environment Variables
-
-### Backend (`.env`)
-
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-SURJOPAY_API_KEY=your_surjopay_key
-
----
-## 🗃️ API Endpoints Overview
-VITE_API_BASE_URL=http://localhost:5000/api
---
-
-
-## 🗃️ API Endpoints
-
-### 1. **Place an Order**
-- **Endpoint**: `/api/orders`
-- **Method**: `POST`
-- ** Headers: Authorization: Bearer <JWT_TOKEN>
---
-
-
-###Request Body:
-  ```json
- {
-  "email": "customer@example.com",
-  "product": "648a45e5f0123c45678d9012",
-  "quantity": 2,
-  "totalPrice": 2400
-}
-  ```
-- **Response**:
-  ```json
- {
-  "message": "Order created successfully",
-  "status": true,
-  "data": {
-    "_id": "648b45f5e1234b56789a6789",
-    "email": "customer@example.com",
-    "product": "648a45e5f0123c45678d9012",
-    "quantity": 2,
-    "totalPrice": 2400,
-    "createdAt": "2024-11-19T12:00:00.000Z",
-    "updatedAt": "2024-11-19T12:00:00.000Z"
-  }
-}
-
-  ```
-
-### 2. **Calculate Revenue**
-- **Endpoint**: `/api/orders/revenue`
-- **Method**: `GET`
-- **Response**:
-  ```json
-  {
-    "message": "Revenue calculated successfully",
-    "status": true,
-    "data": {
-      "totalRevenue": 3600
-    }
-  }
-  ```
-
----
-## 🚲 Bike Shop API Endpoints
- ### 🔐 User Endpoints
-  # Method	Endpoint	Description
-   - GET	/api/users	Get all users
-   - GET	/api/users/:id	Get user by ID
-   - POST	/api/users	Create a new user
-   - PUT	/api/users/:id	Update user info
-   - DELETE	/api/users/:id	Delete a user
----
-
-### 🛒 Product Endpoints
- # Method	Endpoint	Description
-  - GET	/api/products	Get all products
-  - GET	/api/products/:id	Get product by ID
-  - POST	/api/products	Add new product
-  - PUT	/api/products/:id	Update product details
-  - DELETE	/api/products/:id	Delete a product
----
-
-### 📦 Order Endpoints
- # Method	Endpoint	Description
-  - GET	/api/orders	Get all orders
-  - GET	/api/orders/:id	Get order by ID
-  - POST	/api/orders	Create a new order
-  - PUT	/api/orders/:id	Update order status/info
-  - DELETE	/api/orders/:id	Cancel/Delete an order
----
+## The **Bike Shop Application** is a full-featured e-commerce platform where users can browse, filter, and purchase bikes. It includes secure user authentication, role-based dashboards for users and admins, real-time order tracking, and payment integration using **SurjoPay**.
 
 ## 🌟 Getting Started
 
 ### Prerequisites:
+
 -Node.js (v16 or later)
 
 -MongoDB (Local or Atlas)
@@ -197,47 +28,97 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ---
 
-### Installation:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Rebakum/Bike-store-B4-A4.git
-   cd Bike-store-B4-A4
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Set up the environment variables:
-   Create a `.env` file in the root and configure:
-   ```plaintext
-   MONGO_URI=your_mongo_connection_string
-   PORT=5000
-   ```
-4. Start the server:
-   ```bash
-   npm run dev
-   ```
----
+# 🚴 Bike Store API
 
-## 🤬 Testing
+This repository contains a complete Postman Collection for the **Bike Store** project, including APIs for authentication, user management, product (bike) management, and order processing. It's built for developers working on or testing a backend system for an online bike store.
 
-- Use Postman to test the APIs.
-- Ensure the MongoDB database is running for seamless functionality.
+## 🔗 API Overview
 
----
+The collection is organized into several folders for easier navigation:
 
-## 🙌 Contributing
+- **Auth** - Handles user registration, login, token refresh, and password management.
+- **User** - Allows users to update their profile.
+- **Admin** - Admin-only routes for user management (e.g., viewing all users, blocking users).
+- **Bike** - CRUD operations for bike products.
+- **Order** - Create orders, get order history, verify payment, and check revenue.
 
-Feel free to fork the repository and submit pull requests for any enhancements or bug fixes.
+## 📁 Folder Breakdown
 
----
+### 1. Auth
 
+| Endpoint                    | Method | Description                   |
+| --------------------------- | ------ | ----------------------------- |
+| `/api/auth/register`        | POST   | Register a new user           |
+| `/api/auth/login`           | POST   | Login with credentials        |
+| `/api/auth/me`              | GET    | Get current user details      |
+| `/api/auth/refresh-token`   | POST   | Refresh access token          |
+| `/api/auth/update-password` | PATCH  | Update user's password        |
+| `/api/auth/logout`          | POST   | Logout and invalidate session |
 
+### 2. User
 
-## 📞 Contact
+| Endpoint                   | Method | Description              |
+| -------------------------- | ------ | ------------------------ |
+| `/api/user/update-profile` | PATCH  | Update user profile info |
 
-For any inquiries, contact:
-- **Name**: Mist. Rebeka Sultana
-- **Email**: rebakpi@gmail.com
+### 3. Admin
 
+| Endpoint                     | Method | Description             |
+| ---------------------------- | ------ | ----------------------- |
+| `/api/admin/all-users`       | GET    | Retrieve all users      |
+| `/api/admin/users/:id/block` | PATCH  | Block or unblock a user |
 
+### 4. Bike (Product)
+
+| Endpoint            | Method | Description             |
+| ------------------- | ------ | ----------------------- |
+| `/api/products/`    | POST   | Create a new bike       |
+| `/api/products/`    | GET    | Get all bikes           |
+| `/api/products/:id` | GET    | Get a single bike by ID |
+| `/api/products/:id` | PUT    | Update an existing bike |
+| `/api/products/:id` | DELETE | Delete a bike           |
+
+### 5. Order
+
+| Endpoint              | Method | Description                      |
+| --------------------- | ------ | -------------------------------- |
+| `/api/orders`         | POST   | Create a new order               |
+| `/api/orders`         | GET    | Get all orders for user/admin    |
+| `/api/orders/verify`  | PATCH  | Verify a payment                 |
+| `/api/orders/revenue` | GET    | Get revenue summary (admin only) |
+
+## ✅ Authorization
+
+- **Type**: Bearer Token (JWT)
+- **Required for**: All routes except registration and login
+- Tokens must be set in the `Authorization` header in Postman.
+
+## 📦 How to Use
+
+1. Clone or download this repository.
+2. Open **Postman**.
+3. Register a user, then login to get a JWT token.
+4. Add the token to the `Authorization` header for protected routes.
+
+## 🌐 Example `.env` File
+
+To run the backend server properly, here is a sample `.env` file:
+
+```env
+NODE_ENV=development
+PORT=5000
+DATABASE_URL=
+
+BCRYPT_SALT_ROUND=8
+
+JWT_ACCESS_EXPIRES_IN=10d
+JWT_REFRESH_EXPIRES_IN=15d
+JWT_ACCESS_SECRET=
+JWT_REFRESH_SECRET=
+
+SP_ENDPOINT=https://sandbox.shurjopayment.com
+SP_USERNAME=sp_sandbox
+SP_PASSWORD=pyyk97hu&6u6
+SP_PREFIX=SP
+SP_RETURN_URL=https://bike-store-b4-a4-frontend.vercel.app/response
+```
