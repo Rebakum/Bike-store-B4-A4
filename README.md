@@ -6,7 +6,7 @@ A full-stack bike e-commerce web application with user registration, secure auth
 
 ## 🔥 Live Demo
 
-[Coming Soon...] or [Add your deployed URL here]
+https://bike-store-b4-a4.vercel.app/
 
 ---
 
