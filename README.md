@@ -7,6 +7,7 @@ A backend bike shop e-commerce web application with user registration, secure au
 ## 🔥 Live Demo
 
 https://bike-store-b4-a4.vercel.app/
+https://bike-store-b4-a4-frontend.vercel.app
 
 ---
 
